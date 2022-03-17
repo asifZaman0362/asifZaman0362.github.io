@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Satisfy&display=swap');
+
+:root {
+	--color-bg: #1d2123;
+	--color-fg: white;
+
+	--col-function: cyan;
+	--col-bracket: greenyellow;
+	--col-string: orange;
+	--col-operator: pink;
+	--col-type: rgb(228, 74, 95);
+	--col-keyword: rgb(245, 90, 116);
+}
+
+html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: var(--color-bg);
+	color: var(--color-fg);
+	font-family: 'IBM Plex Sans';
+}
+
+header {
+	background-color: var(--color-fg);
+	padding: 10pt 50pt;
+	position: sticky;
+	display: flex;
+	flex-direction: row;
+}
+
+header a {
+	color: var(--color-bg);
+}
+
+header #textmark {
+	flex-grow: 1;
+	align-self: center;
+}
+
+header a span#name {
+	font-size: x-large;
+	font-weight: 600;
+}
+
+header a span#extension {
+	font-size: x-large;
+	font-weight: 300;
+	font-style: italic;
+}
+
+nav {
+	display: inline-block;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-left: 20px;
+	font-size: large;
+}
+
+.content {
+	padding: 50pt;
+	font-family: 'Iosevka', 'Consolas', 'Menlo', monospace;
+}
+
+.code span {
+	margin: 5px 0;
+}
+
+.function {
+	color: var(--col-function);
+}
+
+.arguments {
+	color: var(--col-bracket);
+}
+
+.string {
+	color: var(--col-string);
+}
+
+.operator {
+	color: var(--col-operator);
+}
+
+.datatype {
+	color: var(--col-type);
+}
+
+.keyword {
+	color: var(--col-keyword);
+	font-weight: bolder;
+}
