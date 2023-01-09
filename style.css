@@ -3,8 +3,8 @@
 
 :root {
     --col-about: #D9FFDA;
-    --col-featured: #FFD9D9;
-    --col-jargon: #C8F3FC;
+    --col-bottom-left: #FFD9D9;
+    --col-bottom-right: #C8F3FC;
     --col-bg: white;
     --col-fg: black;
 }
@@ -14,11 +14,11 @@ html, body {
     padding: 0;
     height: 100vh;
     width: 100%;
+    font-family: 'IBM Plex Sans';
+    font-style: italic;
 }
 
 * {
-    font-family: 'IBM Plex Sans';
-    font-style: italic;
     transition: 0.5s;
 }
 
@@ -139,25 +139,25 @@ section:hover {
     width: 50%;
 }
 
-#jargon {
-    background-color: var(--col-jargon);
+#bottom-left {
+    background-color: var(--col-bottom-right);
     flex-grow: 1;
     height: 50%;
 }
 
-#jargon:hover {
-    height: 80%;
+#bottom-left:hover {
+    height: 90%;
 }
 
-#featured {
-    background-color: var(--col-featured);
+#bottom-right {
+    background-color: var(--col-bottom-left);
     flex-grow: 1;
     padding: 20px 80px;
-    height: 80%;
+    height: 50%;
     transition: 0.5s;
 }
 
-#featured h1 {
+#bottom-right h1 {
     font-weight: 900;
     color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -168,8 +168,8 @@ section:hover {
     width: 60%;    
 }
 
-#featured:hover {
-    max-height: 80%;
+#bottom-right:hover {
+    height: 80%;
 }
 
 section {
@@ -192,11 +192,11 @@ section h1 {
     -webkit-text-stroke-color: black;
 }
 
-#jargon h1 {
+#bottom-left h1 {
     font-weight: 300;
 }
 
-#jargon h1 span {
+#bottom-left h1 span {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -227,7 +227,7 @@ section h1 {
     border-bottom: 2px solid black;
 }
 
-#featured a {
+#bottom-right a {
     font-family: 'Inter';
     font-style: normal;
     color: black;
@@ -240,4 +240,56 @@ section h1 {
     font-weight: 100 700;
     font-stretch: 85 100;
     font-display: fallback;
+}
+
+code {
+    font-family: monospace;
+    font-style: normal !important;
+    height: 0px;
+    overflow: hidden;
+    display: block;
+}
+
+
+keyword {
+    color: orangered;
+}
+
+string {
+    color: rgb(108, 108, 42);
+}
+
+num {
+    color: green;
+}
+
+op {
+    color: blue;
+}
+
+decltype {
+    color: maroon;
+}
+
+type {
+    color: rgb(16, 93, 65);
+}
+
+indent::after {
+    content: "    ";
+}
+
+code .char {
+    visibility: hidden;
+    transition-delay: 0ms;
+}
+
+#bottom-left:hover code {
+    height: 350px;
+}
+
+#bottom-left:hover code .char {
+    visibility: visible;
+    --delay: calc((var(--char-index)) * 30ms);
+    transition-delay: var(--delay);
 }

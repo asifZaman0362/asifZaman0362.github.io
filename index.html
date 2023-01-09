@@ -18,12 +18,54 @@
                     <div id="gitsource">view on <a href="https://github.com/asifZaman0362/asifZaman0362.github.io">GitHub</a></div>
                 </div>
             </section>
-            <section id="featured">
-                <h1 id="post-title">Featured Post</h1>
-                <p>The original text in this article was a bit too complicated 
-                    and uninteresting to be catchy enough to go on the homepage 
-                    so I have resorted to using this unrelated bit of text as a placeholder.</p>
-                <a href="https://zifmann.tech/featured" class="read-more-link">Read more -></a>
+            <section id="bottom-left">
+                <h1>Introducing... <span>Jargon</span></h1>
+                <p>Currently, I’m working on an experimental programming language of my own as 
+                a side project primarily for the purpose of learning about compilers and systems in depth.
+                I have an online compiler and REPL for it on here so if you’re curious, check it out. 
+                </p>
+                <code data-splitting>
+                    <pre>
+<line><keyword>import </keyword><string>"std/console"</string>;</line>
+<br>
+<line><keyword>import </keyword><string>"std/math"</string>;</line>
+<br>
+<br>
+<line><decltype>struct </decltype>Vector2<op>: </op><type>type </type><op>= </op>{</line>                    
+<br>
+<line><indent></indent><decltype>field </decltype>x<op>: </op><type>real</type>;</line>
+<br>
+<line><indent></indent><decltype>field </decltype>y<op>: </op><type>real</type>;</line>
+<br>
+<line>};</line>
+<br>
+<br>
+<line><decltype>proc </decltype>Vector2<op>::</op>magnitude()<op>: </op><type>real() </type><op>= </op>math<op>::</op>sqrt(self<op>::</op>x <op>** </op><num>2</num><op> + </op>self<op>::</op>x <op>** </op><num>2</num>);</line>
+<br>
+<br>
+<line><decltype>proc </decltype>Vector2<op>::</op>normalized()<op>: </op><type>real() </type><op>= </op>{</line>
+<br>
+<line><indent></indent>self<op>::</op>x<op> /= </op> self<op>::</op>magnitude();</line>
+<br>
+<line><indent></indent>self<op>::</op>y<op> /= </op> self<op>::</op>magnitude();</line>
+<br>
+<line>};</line>
+<br>
+<br>
+<line><decltype>proc </decltype>main(<decltype>param </decltype>args<op>: </op><type>string</type><op>[</op><num>_</num><op>]</op>)<op>: </op><type>int()</type><op> = </op> {</line>
+<br>
+<line><indent></indent><decltype>var </decltype>position<op>: </op><type>Vector2</type><op> = </op>{ <num>10.5</num>, <num>43.2</num> };</line>
+<br>
+<line><indent></indent>console<op>::</op>print(position<op>::</op>magnitude());</line>
+<br>
+<line><indent></indent>console<op>::</op>print(position<op>::</op>normalized());</line>
+<br>
+<line><indent></indent><keyword>return </keyword><num>0</num>;</line>
+<br>
+<line>};</line>
+<br>
+                    </pre>
+                </code>
             </section>
         </div>
         <div id="right">
@@ -45,18 +87,47 @@
                     </ul>            
                 </section>
             </div>
-            <section id="jargon">
-                <h1>Introducing... <span>Jargon</span></h1>
-                <p>Currently, I’m working on an experimental programming language of my own as 
-                a side project primarily for the purpose of learning about compilers and systems in depth.
-                I have an online compiler and REPL for it on here so if you’re curious, check it out. 
-                Do bear in mind, it is in its early stages and is therefore very fragile and limited in 
-                its current state.</p>
+            <section id="bottom-right">
+                <h1 id="post-title">Featured Post</h1>
+                <p>The original text in this article was a bit too complicated 
+                    and uninteresting to be catchy enough to go on the homepage 
+                    so I have resorted to using this unrelated bit of text as a placeholder.</p>
+                <a href="https://zifmann.tech/featured" class="read-more-link">Read more -></a>
             </section>
         </div>
     </div>
     <script type="text/javascript">
         Splitting();
+        function generateCodeDom() {
+            var code = `
+                import "std/console";
+                import "std/math";
+
+                struct Vector2: type = {
+                    field x: real;
+                    field y: real;
+                };
+                
+                proc Vector2::magnitude(): real() = math::sqrt(self::x ** 2 + self::y ** 2);
+                
+                proc Vector2::normalized(): () = {
+                    return {
+                        self::x / self::magnitude(),                    
+                        self::y / self::magnitude()
+                    };
+                };
+            
+                proc main(param args: string[_]): int = {
+                    var position: Vector2 = { 10.0, 20.0 };
+                    var direction: Vector2 = position::normalized();
+                    return 0;
+                };
+            `;
+            tokens = lex(code);
+            console.log(tokens);
+        }
+        
+        generateCodeDom();
     </script>
 </body>
 </html>
