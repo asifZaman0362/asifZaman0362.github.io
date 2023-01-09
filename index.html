@@ -1,31 +1,62 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta name="charset" content="utf-8"/>
-		<meta name="author" content="zero362001@protonmail.com"/>
-		<meta name="description" content="A portfolio page to showcase my work."/>
-		<meta name="viewport" content="width=device-width; height=device-height;"/>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<header>
-			<a href="https://zifmann.tech" id="textmark"><span id="name">zifmann</span><span id="extension">.tech</span></a>
-			<nav>
-				<ul id="links">
-					<li class="navlink"><a href="https://github.com/asifZaman0362?tab=repositories">projects</a></li>
-					<li class="navlink"><a href="about.html">about</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="content">
-			<div class="code">
-				<span class="keyword">import </span><span class="string">"std/console"</span>;
-				<br>
-				<br>
-				<span class="variable">console<span class="operator">::<span class="function">print<span class="arguments">(<span class="string">"What is your name ?"</span>)</span></span></span>;</span>
-				<br>
-				<span class="variable">name</span><span class="operator"> : </span><span class="datatype">string</span><span class="operator"> = </span><span class="variable">console</span><span class="operator">::</span><span class="function">getstring</span><span class="arguments">()</span>;
-			</div>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta author="asifzaman0362@gmail.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashif Zaman's portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <section id="trademark">
+                <div id="trademark-inner">
+                    <div id="title">zifmann<span>.tech</span></div>
+                    <div id="gitsource">view on <a href="https://github.com/asifZaman0362/asifZaman0362.github.io">GitHub</a></div>
+                </div>
+            </section>
+            <section id="featured">
+                <h1 id="post-title">Featured Post</h1>
+                <p>The original text in this article was a bit too complicated 
+                    and uninteresting to be catchy enough to go on the homepage 
+                    so I have resorted to using this unrelated bit of text as a placeholder.</p>
+                <a href="https://zifmann.tech/featured" class="read-more-link">Read more -></a>
+            </section>
+        </div>
+        <div id="right">
+            <div id="top-right">
+                <section id="about">
+                    <h1>Hi!</h1>
+                    <h1>I'm <span>Ashif</span></h1>
+                    <br>
+                    <p>I make games, websites, parsers and other software.</p>
+                    <p>I also provide design consultancy for small scale projects.</p>
+                </section>
+                <section id="links">
+                    <ul>
+                        <li><a href="https://zifmann.tech/blog" data-splitting>blog</a></li>
+                        <li><a href="https://zifmann.tech/games" data-splitting>games</a></li>
+                        <li><a href="https://zifmann.tech/projects" data-splitting>projects</a></li>
+                        <li><a href="https://zifmann.tech/github" data-splitting>github</a></li>
+                        <li><a href="https://zifmann.tech/youtube" data-splitting>youtube</a></li>
+                    </ul>            
+                </section>
+            </div>
+            <section id="jargon">
+                <h1>Introducing... <span>Jargon</span></h1>
+                <p>Currently, I’m working on an experimental programming language of my own as 
+                a side project primarily for the purpose of learning about compilers and systems in depth.
+                I have an online compiler and REPL for it on here so if you’re curious, check it out. 
+                Do bear in mind, it is in its early stages and is therefore very fragile and limited in 
+                its current state.</p>
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript">
+        Splitting();
+    </script>
+</body>
 </html>
