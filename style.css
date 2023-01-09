@@ -28,7 +28,6 @@ p {
 }
 
 #left {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     transition: 0.5s;
@@ -43,9 +42,6 @@ p {
     width: 50%;
 }
 
-#right:hover {
-    width: 70%;
-}
 
 #gitsource {
     text-align: right;
@@ -164,9 +160,6 @@ section:hover {
     -webkit-text-stroke-color: black;
 }
 
-#left:hover {
-    width: 60%;    
-}
 
 #bottom-right:hover {
     height: 80%;

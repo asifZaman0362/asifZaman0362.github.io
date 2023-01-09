@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="main">
-        <div id="left">
+        <div id="left" onmouseenter="hoverLeft()" onmouseleave="hoverEndLeft()">
             <section id="trademark">
                 <div id="trademark-inner">
                     <div id="title">zifmann<span>.tech</span></div>
@@ -68,7 +68,7 @@
                 </code>
             </section>
         </div>
-        <div id="right">
+        <div id="right" onmouseenter="hoverRight()" onmouseleave="hoverEndRight()">
             <div id="top-right">
                 <section id="about">
                     <h1>Hi!</h1>
@@ -98,35 +98,22 @@
     </div>
     <script type="text/javascript">
         Splitting();
-        function generateCodeDom() {
-            var code = `
-                import "std/console";
-                import "std/math";
-
-                struct Vector2: type = {
-                    field x: real;
-                    field y: real;
-                };
-                
-                proc Vector2::magnitude(): real() = math::sqrt(self::x ** 2 + self::y ** 2);
-                
-                proc Vector2::normalized(): () = {
-                    return {
-                        self::x / self::magnitude(),                    
-                        self::y / self::magnitude()
-                    };
-                };
-            
-                proc main(param args: string[_]): int = {
-                    var position: Vector2 = { 10.0, 20.0 };
-                    var direction: Vector2 = position::normalized();
-                    return 0;
-                };
-            `;
-            tokens = lex(code);
-            console.log(tokens);
+        function hoverRight() {
+            document.querySelector("#left").style.width = "40%";
+            document.querySelector("#right").style.width = "60%";
         }
-        
+        function hoverEndRight() {
+            document.querySelector("#left").style.width = "50%";
+            document.querySelector("#right").style.width = "50%";
+        }
+        function hoverLeft() {
+            document.querySelector("#left").style.width = "60%";
+            document.querySelector("#right").style.width = "40%";
+        }
+        function hoverEndLeft() {
+            document.querySelector("#left").style.width = "50%";
+            document.querySelector("#right").style.width = "50%";
+        }
         generateCodeDom();
     </script>
 </body>
